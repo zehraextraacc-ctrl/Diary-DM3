@@ -2,118 +2,376 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>Diary</title>
-    
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diary – One Place, One Thing</title>
+    <style>
+        :root {
+            --page-bg: #f4f6f3;
+            --card-bg: #ffffff;
+            --text: #25312b;
+            --muted: #68766d;
+            --accent: #426b53;
+            --accent-light: #e8f0e9;
+            --border: #dce5dc;
+            --quote-bg: #f7f9f6;
+        }
 
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 32px 18px 56px;
+            background: var(--page-bg);
+            color: var(--text);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .page {
+            width: min(100%, 900px);
+            margin: 0 auto;
+        }
+
+        .site-header {
+            margin-bottom: 28px;
+            padding: 34px 36px;
+            border-radius: 20px;
+            background: var(--accent);
+            color: #fff;
+            box-shadow: 0 8px 24px rgba(35, 58, 42, 0.10);
+        }
+
+        .site-header h1 {
+            margin: 0 0 10px;
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            line-height: 1.15;
+            letter-spacing: -0.035em;
+        }
+
+        .site-header p {
+            margin: 0;
+            color: #e7f0e8;
+        }
+
+        .week {
+            margin: 0 0 28px;
+            padding: 30px 34px;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            background: var(--card-bg);
+            box-shadow: 0 4px 16px rgba(35, 58, 42, 0.04);
+        }
+
+        .week-heading {
+            margin: 0 0 22px;
+            padding-bottom: 14px;
+            border-bottom: 2px solid var(--accent-light);
+            color: var(--accent);
+            font-size: 1.7rem;
+            line-height: 1.25;
+        }
+
+        .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 0 0 22px;
+        }
+
+        .meta p {
+            margin: 0;
+            padding: 7px 12px;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            background: #fbfcfa;
+            font-size: 0.94rem;
+        }
+
+        h3 {
+            margin: 28px 0 10px;
+            color: var(--accent);
+            font-size: 1.2rem;
+            line-height: 1.35;
+        }
+
+        p {
+            margin: 0 0 14px;
+        }
+
+        hr {
+            margin: 24px 0;
+            border: 0;
+            border-top: 1px solid var(--border);
+        }
+
+        img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+        }
+
+        .interview {
+            margin: 18px 0;
+            padding: 18px 20px;
+            border-left: 4px solid #88a78e;
+            border-radius: 0 12px 12px 0;
+            background: var(--quote-bg);
+            overflow-wrap: anywhere;
+        }
+
+        .interview p:last-child {
+            margin-bottom: 0;
+        }
+
+        .question {
+            font-weight: 700;
+        }
+
+        .empty-section {
+            min-height: 32px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 16px 10px 32px;
+                font-size: 15px;
+            }
+
+            .site-header,
+            .week {
+                padding: 23px 20px;
+                border-radius: 14px;
+            }
+
+            .meta {
+                display: grid;
+                gap: 8px;
+            }
+
+            .meta p {
+                border-radius: 10px;
+            }
+        }
+    </style>
+</head>
 <body>
+    <main class="page">
+        <header class="site-header">
+            <h1>Diary: One Place, One Thing</h1>
+            <p>Team: Rex, Vi, Zehra</p>
+            <p>Ort: Botanischer Garten, Ulm</p>
+        </header>
 
-    <h1>Diary</h1>
-    <p><strong>Datum:</strong> 07.10.2026</p>
-    <p><strong>Team:</strong> Rex, Vi, Zehra</p>
+        <section class="week" aria-labelledby="woche-1">
+            <div class="meta">
+                <p><strong>Datum:</strong> 07.10.2026</p>
+                <p><strong>Team:</strong> Rex, Vi, Zehra</p>
+                <p><strong>Ort:</strong> Botanischer Garten, Ulm</p>
+            </div>
 
+            <h2 class="week-heading" id="woche-1">Woche 1</h2>
 
-    <p><strong>Ort:</strong> Botanischer Garten, Ulm</p>
+            <h3>Herangehensweise</h3>
+            <p>
+                Zunächst haben wir uns als Gruppe dazu entschlossen, alle individuellen Ideen für einen Ort,
+                eine lernbare Sache, und eine Zielgruppe zu finden. Bei der Zielgruppe waren wir uns direkt einig,
+                Studenten auszuwählen, die Hintergründe und natürliche Szenerien besser zeichnen möchten, da wir
+                nicht nur identische viele Anhaltspunkte zu uns selbst gefunden haben, sondern auch eine große
+                Brandweite an jungen Erwachsenen DM Studenten so gezielt erfassen. Die Entscheidung des Ortes viel
+                daraufhin auf den botanischen Garten, da dieser durch die natürliche Szenerie als auch den vielen
+                Insekten viele Möglichkeiten für das zeichnerische Üben gibt. Vor Ort sind uns die verschiedenen Szenerien,
+                also die Vielfalt aufgefallen. Überraschend war auch die Vielfalt der einzelnen Pflanzen selbst.
+                Nach dem Besuch wurden die fünf Fragen in einer Seite beantwortet.
+                <br><br>
+                Für die Lightning Demos haben wir als Lernapp "SimplyGuitar" zum Gitarre spielen lernen genommen
+                und als Guide ein Zeichnen-Guide um mehr über die Grundlagen über das Zeichnen zu lernen.
+                <br><br>
+                Da es das
+                erste Diary ist, ist zeitlich noch kein Feedback vom Dozenten möglich gewesen und Verbesserungen können
+                erst an der folgenden Vorlesung wahrgenommen werden.
+            </p>
 
-    <hr>
+            <h3>Beschreibung des Ortes</h3>
+            <p>
+                Der Botanische Garten in Ulm ist ein Ort, der eine Vielzahl von Pflanzenarten beherbergt und eine ruhige,
+                naturnahe Umgebung bietet. Dort gibt es nicht nur gibt es gute Sitzmöglichkeiten, sondern auch viele
+                verschiedene Pflanzenarten, die man beobachten kann, was einen reichhaltigen Eindruck hinterlässt und dazu
+                regt den Ort wieder zu besuchen.
+            </p>
 
-    <h2>Woche 1</h2>
+            <h3>Besondere Eindrücke</h3>
+            <p>
+                Die Kulisse ist im Botanischen Garten nicht nur angenehm, sondern spiegelt auch die Ruhe wieder.
+                Vor Ort ist es leise und Idyllisch, sodass man den Fokus auf Details legen kann. Manchmal findet man jedoch
+                Fahrzeuge auf Wanderwegen.
+            </p>
 
-
-    <h3>Herangehensweise</h3>
-
-    <p>
-        Zunächst haben wir uns als Gruppe dazu entschlossen, alle individuellen Ideen für einen Ort, 
-        eine lernbare Sache, und eine Zielgruppe zu finden. Bei der Zielgruppe waren wir uns direkt einig, 
-        Studenten auszuwählen, die Hintergründe und natürliche Szenerien besser zeichnen möchten, da wir 
-        nicht nur identische viele Anhaltspunkte zu uns selbst gefunden haben, sondern auch eine große 
-        Brandweite an jungen Erwachsenen DM Studenten so gezielt erfassen. Die Entscheidung des Ortes viel 
-        daraufhin auf den botanischen Garten, da dieser durch die natürliche Szenerie als auch den vielen 
-        Insekten viele Möglichkeiten für das zeichnerische Üben gibt. Vor Ort sind uns die verschiedenen Szenerien, 
-        also die Vielfalt aufgefallen. Überraschend war auch die Vielfalt der einzelnen Pflanzen selbst. 
-        Nach dem Besuch wurden die fünf Fragen in einer Seite beantwortet.
-        <br><br>
-        Für die Lightning Demos haben wir als Lernapp "SimplyGuitar" zum Gitarre spielen lernen genommen 
-        und als Guide ein Zeichnen-Guide um mehr über die Grundlagen über das Zeichnen zu lernen. 
-        <br><br>
-        Da es das 
-        erste Diary ist, ist zeitlich noch kein Feedback vom Dozenten möglich gewesen und Verbesserungen können 
-        erst an der folgenden Vorlesung wahrgenommen werden.
-    </p>
-
-    <h3>Beschreibung des Ortes</h3>
-
-    <p>
-        Der Botanische Garten in Ulm ist ein Ort, der eine Vielzahl von Pflanzenarten beherbergt und eine ruhige, 
-        naturnahe Umgebung bietet. Dort gibt es nicht nur gibt es gute Sitzmöglichkeiten, sondern auch viele 
-        verschiedene Pflanzenarten, die man beobachten kann, was einen reichhaltigen Eindruck hinterlässt und dazu 
-        regt den Ort wieder zu besuchen.
-    </p>
-
-    <h3>Besondere Eindrücke</h3>
-
-    <p>
-        Die Kulisse ist im Botanischen Garten nicht nur angenehm, sondern spiegelt auch die Ruhe wieder.
-        Vor Ort ist es leise und Idyllisch, sodass man den Fokus auf Details legen kann. Manchmal findet man jedoch 
-        Fahrzeuge auf Wanderwegen.
-    </p>
-
-    <h3>Problematiken</h3>
-
-    <p>
-        Eine Problematik, auf die wir gestoßen sind, war uns 
-        gemeinsam zusammen zu finden. Da wir am Mittwoch noch keine klare Idee vom Ort hatten, konnten wir an 
-        diesem Tag nirgendswo hingehen. Jedoch sind wir am Montag, nachdem wir uns zudem davor auf einen Ort 
-        geeinigt haben, zusammen dort hingefahren und haben den botanischen Garten eine Stunde lang beobachtet. 
-
-    </p>
-
+            <h3>Problematiken</h3>
+            <p>
+                Eine Problematik, auf die wir gestoßen sind, war uns
+                gemeinsam zusammen zu finden. Da wir am Mittwoch noch keine klare Idee vom Ort hatten, konnten wir an
+                diesem Tag nirgendswo hingehen. Jedoch sind wir am Montag, nachdem wir uns zudem davor auf einen Ort
+                geeinigt haben, zusammen dort hingefahren und haben den botanischen Garten eine Stunde lang beobachtet.
+            </p>
+        </section>
 
 
-</head>
+        <section class="week" aria-labelledby="woche-2">
+            <div class="meta">
+                <p><strong>Datum:</strong> 14.10.2026</p>
+                <p><strong>Team:</strong> Rex, Vi, Zehra</p>
+                <p><strong>Ort:</strong> Botanischer Garten, Ulm</p>
+            </div>
 
+            <h2 class="week-heading" id="woche-2">Woche 2</h2>
 
+            <h3>Die drei Aufgaben</h3>
+            <p>
+                Wir haben die 3 Aufgaben unter den Gruppenmitgliedern aufgeteilt. Jeder hat dann eigenständig zunächst seine Aufgabe bearbeitet, dann wurden die Ergebnisse in der Gruppe zusammengetragen und besprochen.
+            </p>
 
-    <h1>Woche 2</h1>
-    <p><strong>Datum:</strong> 14.10.2026</p>
-    
+            <h3>Die Interviews</h3>
+            <p>
+                Wir haben pro Person je 2 Interview-Partner gefunden, mit Fokus auf Studenten welche in unsere Zielgruppe passen.
+            </p>
 
+            <h3>Feedback und weitere Beobachtungen</h3>
+            <p>
+                Das Feedback des Profs war unter Anderem weitere Beobachtungen insbesondere zur Zielgruppe an unserem Ort anzustellen, was wir dann daraufhin getan haben. Uns ist vor Allem aufgefallen, dass ein Großteil der Leute, welche tatsächlich Interesse an dem Ort und den Pflanzen hatten ältere Leute oder Eltern mit Kindern waren. Jüngere Leute oder Studenten waren zwar vereinzelt vor Ort, allerdings waren diese eher auf den Liegen und Bänken zu finden, sich unterhaltend. Wir haben hier einen Zusammenhang zur Nähe der Uni Gebäude gezogen. Wir haben daraufhin die Idee gehabt, mit unserem Produkt Studenten, welche sich ohnehin schon in der Nähe des botanischen Gartens befinden, und diesen auch teilweise in der Freizeit besuchen, den Ort selbst (die Natur, Pflanzenvielfalt, die Dinge die es dort zu beobachten und zu entdecken gibt) näher zu bringen, und dazu anzuregen mit seiner Umgebung zu interagieren, statt dort einfach nur zu verweilen.
+            </p>
+            <p>
+                Außerdem wurde vom Prof angemerkt, dass unsere Idee womöglich nicht für Personen jedes Fähigkeiten-standes ist, da es für Anfänger sehr schwer sein kann, Natur, Pflanzen und Szenerien einfach aus dem Stegreif heraus zu zeichnen. Wir haben daraufhin unsere Zielgruppe auf Studenten mit fortgeschrittenem Zeichenlevel eingeschränkt.
+            </p>
 
+            <h3>Problematiken</h3>
+            <p>
+                Eine Problematik, die wir hatten, war es, sich als Gruppe zusammenzufinden, hauptsächlich aufgrund von Krankheitsfällen. Vieles an Kommunikation wurde daher remote getätigt.
+            </p>
 
+            <h3>Aufgaben</h3>
+            <p>Die Aufgaben wurden wie folgt verteilt: Rex hat den Blur Test erstellt, Zehra die Subtraction und Vi die Memory Tax-Audit.</p>
+            <br>
+            <p>Zunächst sieht man hier den Blur Test, vom Original auf 10%, 20% und anschließend 40%</p>
 
-    <hr>
+            <img src="bilder/BlurNone.png" alt="None"> 
+            <img src="bilder/Blur10.png" alt="10"> 
+            <img src="bilder/Blur20.png" alt="20"> 
+            <img src="bilder/Blur40.png" alt="40"> 
 
-    
+            <br>
+            <p>Original Gruppen: Kopfzeile, Socken Aktion (extra Feld), Spende Bestätigung, Fußzeile </p>
+            <p>10% Blur Gruppen: Kopfzeile, Socken Aktion (extra Feld nicht mehr erkennbar), Spende Bestätigung, Fußzeile</p>
+            <p>20% Blur Gruppen: Kopfzeile, Kleines rotes Feld, Textfeld, Rote Zeile, Spende Bestätigung, Fußzeile </p>
+            <p>40% Blur Gruppen: Nur noch vereinzelnd Farben erkennbar. Zwei rote Felder, Ein leichtes grünes Feld </p>
 
+            <br><br>
+            <p>Daraufhin sieht man hier den Vorher-Nacher vergleich der Subtraction Aufgabe</p>
 
-    <h3>Die drei Aufgaben</h3>
+            <img src="bilder/subtractionVorher.png" alt="Vorher"> 
+            <img src="bilder/subtractionNachher.png" alt="Nachher"> 
+            <br>
+            <p>Bei der Überarbeitung meines Spotify-Layouts habe ich mich vor allem auf die Prinzipien des Kontrasts und der visuellen Hierarchie und die damit verbundenen Größenverhältnisse fokussiert. Mein Ziel war dabei, Die Elemente "Lieblingssongs" und "On Repeat" als „Winner“ bzw als die wichtigsten Inhalte hervorzuheben, ohne diese zu verändern. Stattdessen habe ich die konkurrierende Elemente, also die „Losers“, abgeschwächt.
+            Dafür habe ich zunächst den Kontrast verschiedener Elemente reduziert. Weniger wichtige Bereiche wurden beispielsweise durch eine weniger auffällige Farbgebung und einen geringeren Helligkeits- bzw. Farbkontrast zurückgenommen. Dadurch konkurrieren sie weniger stark um Aufmerksamkeit. Außerdem habe ich bei einigen Elementen die Größe reduziert. Weniger wichtige Inhalte nehmen dadurch weniger visuellen Raum ein und wirken gegenüber dem gewählten Hauptelement zurückhaltender. Der Blick wird direkt auf die wichtigsten Playlists gelenkt.
+            Auch die Typografie habe ich genutzt, um die visuelle Hierarchie zu verändern. Beispielsweise können weniger wichtige Überschriften oder Texte durch eine geringere Schriftgröße und einer weniger dominanten Farbe wirken. Ich habe viel Kontrast in der Typografie verwendet, um die unwichtigen Sachen dunkler zu designen und somit in den Hintergrund zu bringen. Dadurch entsteht eine klarere Hierarchie zwischen den verschiedenen Informationsebenen.</p>
 
-    <p>
-     Wir haben die 3 Aufgaben unter den Gruppenmitgliedern aufgeteilt. Jeder hat dann eigenständig zunächst seine Aufgabe bearbeitet, dann wurden die Ergebnisse in der Gruppe zusammengetragen und besprochen.
-    </p>
+            <br><br>
+            <p>Zum Schluss noch die Memory Tax-Audit Aufgabe</p>
 
-    <h3>Die Interviews</h3>
+            <img src="bilder/Tax1.png" alt="1">
+            <img src="bilder/Tax2.png" alt="2">
+            <img src="bilder/Tax3.png" alt="3">
+            <img src="bilder/Tax4.png" alt="4">
 
-    <p>
-    Wir haben pro Person je 2 Interview-Partner gefunden, mit Fokus auf Studenten welche in unsere Zielgruppe passen.
-    </p>
+            <br>
+            <p>Der Nutzer meldet sich in der App an, danach wird ein Bestätigungs-Code an die Email-Adresse geschickt, welche mit dem Account verknüpft ist. Hier muss sich der Nutzer evtl. merken, welche Email-Adresse überhaupt zugewiesen ist. Das Interface könnte einen Button oder Link haben, welcher den Nutzer direkt zu seinem Postfach der richtigen Email-Adresse bringt.</p>
+            <p>Hier muss sich der Nutzer den Code aus der Email merken, um ihn dann in der App einzugeben. Hier könnte entweder in der Email selbst ein Button verbaut sein, welcher den Nutzer zurück zur App bringt und den Code automatisch ausfüllt, oder man könnte den zweiten Schritt komplett entfernen, indem die App registriert, dass ein Code auf dem Gerät eingegangen ist und diesen automatisch ausfüllt.</p>
 
-    <h3>Feedback und weitere Beobachtungen</h3>
+        </section>
 
-    <p>
-        Das Feedback des Profs war unter Anderem weitere Beobachtungen insbesondere zur Zielgruppe an unserem Ort anzustellen, was wir dann daraufhin getan haben. Uns ist vor Allem aufgefallen, dass ein Großteil der Leute, welche tatsächlich Interesse an dem Ort und den Pflanzen hatten ältere Leute oder Eltern mit Kindern waren. Jüngere Leute oder Studenten waren zwar vereinzelt vor Ort, allerdings waren diese eher auf den Liegen und Bänken zu finden, sich unterhaltend. Wir haben hier einen Zusammenhang zur Nähe der Uni Gebäude gezogen. Wir haben daraufhin die Idee gehabt, mit unserem Produkt Studenten, welche sich ohnehin schon in der Nähe des botanischen Gartens befinden, und diesen auch teilweise in der Freizeit besuchen, den Ort selbst (die Natur, Pflanzenvielfalt, die Dinge die es dort zu beobachten und zu entdecken gibt) näher zu bringen, und dazu anzuregen mit seiner Umgebung zu interagieren, statt dort einfach nur zu verweilen.
-        <br>
-        <br>
-        Außerdem wurde vom Prof angemerkt, dass unsere Idee womöglich nicht für Personen jedes Fähigkeiten-standes ist, da es für Anfänger sehr schwer sein kann, Natur, Pflanzen und Szenerien einfach aus dem Stegreif heraus zu zeichnen. Wir haben daraufhin unsere Zielgruppe auf Studenten mit fortgeschrittenem Zeichenlevel eingeschränkt.
-   
-    </p>
+        <section class="week" aria-labelledby="woche-3">
+            <div class="meta">
+                <p><strong>Datum:</strong> 21.10.2026</p>
+                <p><strong>Team:</strong> Rex, Vi, Zehra</p>
+                <p><strong>Ort:</strong> Botanischer Garten, Ulm</p>
+            </div>
 
-    <h3>Problematiken</h3>
+            <h2 class="week-heading" id="woche-3">Woche 3</h2>
 
-    <p>
-    Eine Problematik, die wir hatten, war es, sich als Gruppe zusammenzufinden, hauptsächlich aufgrund von Krankheitsfällen. Vieles an Kommunikation wurde daher remote getätigt.
+            <h3>Die Aufgaben</h3>
+            <p>Zwei Personen haben die Aufgaben Journey Map und Contest Map erledigt, während die dritte Person für das Diary zuständig war.<span>  </span>Jeder hat zusätzlich noch jeweils ein Interview geführt.</p>
 
-    </p>
+            <h3>Die Interviews</h3>
 
+            <div class="interview">
+                <p>Interview von Zehra:<br><br>
+                <strong>Zur Frage "Wie einfach/schwer fällt dir das Zeichnen von Natur?"</strong><br><br>
+                Antwort (2 Sätze):<br>
+                Also ich mache das auch gerne eben so in der Freizeit, dass ich so ein paar Blümchen oder so mustermäßig mache.</p>
+
+                <p>Das finde ich auch immer so einer der angenehmsten Sachen zum Zeichnen auch tatsächlich, wenn ich einfach so frei was mache, weil mir langweilig ist. (...)</p>
+
+                <p><strong>Zur Frage "Wie findest du die Idee, im botanischen Garten zu zeichnen":</strong><br><br>
+                Antwort (1 Satz):<br>
+                Also ich muss ehrlich gestehen, ich hab noch nie so was gemacht, dass ich in der Öffentlichkeit so zeichne, aber ich hab das schon öfters mit beobachtet, auch so im Urlaub, dass irgendwer irgendwo so sitzt und irgendwas so abzeichnet mäßig und das fand ich immer total cool, das so zu sehen. (...)</p>
+            </div>
+
+            <div class="interview">
+                <p>Interview von Vi:<br><br>
+                <strong>Zur Frage "Wie gehst du beim Zeichnen vor? "</strong><br><br>
+                Antwort (2 Sätze):<br>
+                (...)</p>
+
+                <p>Also ich glaube schon, wenn mir jetzt so nicht unbedingt was einfällt und ich will es einfach machen, um zu üben, dann zeichne ich einfach irgendwas, was mich gerade umgibt und was ich einfach schön finde, weil ich finde, das ist auch so ein bisschen ein Weg einfach zu schätzen, was um einen rum ist.</p>
+
+                <p>Also zum Beispiel ich habe auch so ein Laub oder so ein schönes Blatt gezeichnet und so, sonst hätte ich das Blatt halt 100% wieder vergessen, aber jetzt ist es halt in meinem Skizzenbuch, das finde ich eigentlich schon ganz schön, so einfach seine Umwelt irgendwie anders wahrzunehmen und die dann auch zu schätzen.<br><br>
+                <strong>Zur Frage "Wie findest du die Idee, im Bot. Garten zu zeichnen?":</strong><br><br>
+                Antwort (1 Satz):<br>
+                Wunschvorstellungen, wie man sich immer im Hinterkopf hat und sich denkt: "Ach, das könnte ich mal machen",das Problem ist, dass man diese Dinge dann halt oft nicht macht, aber es klingt so erstmal sehr sehr schön, also sollte wahrscheinlich jeder einfach mal machen, aber man macht es halt dann doch nicht, weil der Alltag halt wieder und man nimmt sich die Zeit nicht und dann ist es halt doch schon wieder nachts um drei und da will ich dann vielleicht nicht mehr im Botanischen Garten zeichnen.</p>
+            </div>
+
+            <div class="interview">
+                <p>Interview von Rex:</p>
+
+                <p>Zur Frage "<strong>Wäre das ein Problem für dich, wenn du nicht so gutes Internet hättest?</strong>"</p>
+
+                <p>Antwort (2 Sätze):</p>
+                <p>Wenn ich alleine bin, muss ich schon echt ab und zu mal mein Handy checken und wenn ich da dann -also ich erwarte da jetzt nicht dass ich WLAN habe,- aber sollte halt schon gutes Internet haben. Wenn ich da jetzt irgendwie gar kein Netz hätte, würde das definitiv ausschlaggebend dafür sein, dass ich mich da entweder weniger oder gar nicht aufhalte.</p>
+
+                <p>Zur Frage "<strong>Ich habe ja vorhin schon ein bisschen was erzählt zu unserer Idee, zu unserem Projekt. Wenn du jetzt so hörst, es ist noch nicht so weit in der idee, aber was würdest du denn erwarten oder fändest du es super, wenn es das hat?</strong>"</p>
+
+                <p>Antwort (1 Satz):</p>
+                <p>Aber was ich halt cool finde, wäre halt zum Beispiel, wenn ihr zum Beispiel sagt, okay, joa zieh irgendwie eine Karte, eine Pantonefarbe oder so und dann musst du halt in dem Farbton irgendwas finden.</p>
+            </div>
+
+            <h3>Feedback und weitere Beobachtungen</h3>
+            <p>Nachdem wir Feedback bekamen, haben wir unsere App Idee verfeinert und schriftlich dokumentiert. Zudem haben wir Recherche betrieben und ein Whiteboard mit Informationen erstellt.</p>
+
+            <h3>Problematiken</h3>
+            <p>Diese Woche gab es keine Problematiken, auf die wir als Gruppe gestoßen sind.</p>
+
+            <h3>Aufgaben</h3>
+            <p>Die Aufgaben wurden wie folgt verteilt:Zehra hat die Journey Map erstellt und Vi hat die Context Map erstellt.</p>
+            
+            <br>
+            <p>Hier sieht man die Journey Map:</p>
+            
+            <img src="bilder/JourneyMap.png"
+            alt="Journey Map"
+            style="width: 300px !important; max-width: none !important; height: auto;">
+
+            <br><br>
+            <p>Und hier die Context Map:</p>
+            <img src="bilder/ContextMap.png"
+            alt="Context Map"
+            style="width: 850px !important; max-width: none !important; height: auto;">
+
+            <h3>AI-Log</h3>
+            <p>Diese Woche wurde Chatgpt für die Verfeinerung vom CSS-Code des Diaries verwendet.</p>
+        </section>
+    </main>
 </body>
 </html>
+
